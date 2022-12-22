@@ -12,7 +12,7 @@ router.post('/', async(req,res)=>{
     const cabangKaryawan = req.body.cabang_karyawan;
     const karyawan = await Karyawan.create({
         id_karyawan: idKaryawan,
-        nama_cabang:namaKaryawan,
+        nama_karyawan:namaKaryawan,
         cabang_karyawan:cabangKaryawan
     });
     res.json(karyawan)
@@ -23,9 +23,9 @@ router.put('/:id', async(req,res)=>{
     const idKaryawan = req.body.id_karyawan;
     const namaKaryawan = req.body.nama_karyawan;
     const cabangKaryawan = req.body.cabang_karyawan;
-    const karyawan = await Karyawan.create({
+    const karyawan = await Karyawan.update({
         id_karyawan: idKaryawan,
-        nama_cabang:namaKaryawan,
+        nama_karyawan:namaKaryawan,
         cabang_karyawan:cabangKaryawan
     },
     {
