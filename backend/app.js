@@ -11,12 +11,16 @@ const passport = require('passport');
 const db = require('./config/database');
 const cabangModel = require('./models/cabangModel');
 const karyawanModel = require('./models/karyawanModel');
+const recuserModel = require('./models/recuserModel');
+const recexpModel = require('./models/recexpModel');
 
 try{
     db.authenticate();
     console.log("succes");
     cabangModel.sync();
     karyawanModel.sync();
+    recexpModel.sync();
+    recuserModel.sync();
 
     //isi sesuai fitur yang akan di tambahkan misal cabangMOdel.sync(); 
 } catch (error){
@@ -38,7 +42,8 @@ app.use(express.json());
 
 app.use('/cabang', require('./routes/cabang'));
 app.use('/karyawan', require('./routes/karyawan'));
-//samakansesuaifile
+app.use('/recuser', require('./routes/recuser'));
+app.use('/recexp', require('./routes/recexp'));
 
 app.use(express.urlencoded({extended:true}))
 app.use(session({
