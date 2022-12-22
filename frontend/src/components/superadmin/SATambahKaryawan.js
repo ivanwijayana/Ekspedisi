@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 function SATambahKaryawan(){
-    const [karyawan, setKaryawan] = useState([]);
+    const [karyawan, setKaryawan] = useState([]);    
 
     useEffect(() => {
         axios.get('http://localhost:3010/karyawan')
@@ -19,7 +19,7 @@ function SATambahKaryawan(){
         } catch (error){
             alert(error)
         }
-    }
+    };
 
     return(
         <div className="orders">

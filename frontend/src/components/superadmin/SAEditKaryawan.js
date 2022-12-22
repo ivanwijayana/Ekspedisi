@@ -24,7 +24,7 @@ function SAEditKaryawan(){
     const data = {
         id_karyawan: idkaryawan,
         nama_karyawan: nama,
-        lokasi: lokasi
+        cabang_karyawan: lokasi
     };
 
     function UpdateCabang(e) {
@@ -46,7 +46,7 @@ function SAEditKaryawan(){
                                 <label for="company" className=" form-control-label">
                                     ID Cabang
                                 </label>
-                            <input type="text" id="id_cabang" name="id_cabang" placeholder="Enter Cabang ID" className="form-control" onChange={(e) => setIdCabang(e.target.value)} value={idcabang}/>                                
+                            <input type="text" id="id_cabang" name="id_cabang" placeholder="Enter Cabang ID" className="form-control" onChange={(e) => setIdKaryawan(e.target.value)} value={idkaryawan}/>                                
                             
                             <label for="vat" className=" form-control-label">
                                 Nama Cabang
@@ -69,4 +69,3 @@ function SAEditKaryawan(){
 }
 
 export default SAEditKaryawan;
-
