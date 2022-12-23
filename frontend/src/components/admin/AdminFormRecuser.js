@@ -100,9 +100,6 @@ function AdminFormRecuser(){
                                     <button type="submit" className="btn btn-primary btn-sm">
                                         <i className="fa fa-dot-circle-o"></i> Submit
                                     </button>
-                                    <button type="reset" className="btn btn-danger btn-sm">
-                                        <i className="fa fa-ban"></i> Reset
-                                    </button>
                                 </div>
                             </form>
                         </div>
