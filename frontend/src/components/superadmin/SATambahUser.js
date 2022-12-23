@@ -13,9 +13,9 @@ function SATambahUser(){
             })
     }, []);
 
-    const deleteUser = async (user_id) => {
+    const deleteUser = async (id_table_user) => {
         try{
-            await axios.delete(`http://localhost:3010/user/delete/${user_id}`)
+            await axios.delete(`http://localhost:3010/user/delete/${id_table_user}`)
         } catch (error){
             alert(error)
         }
@@ -24,7 +24,7 @@ function SATambahUser(){
     return(
         <div className="orders">
             <a href="/user/form">
-                    <button type="button" class="btn btn-primary fa fa-plus" > Tambah</button>
+            <button type="button" class="btn btn-primary fa fa-plus" > Tambah</button>
                 </a>
                     <div className="row" style={{marginTop:'8px'}}>
                         <div className="col-xl-7">
@@ -53,12 +53,11 @@ function SATambahUser(){
                                                         <td> <span className="name-column">{user.password}</span> </td>
                                                        
                                                         <td>
-                                                        <a href={`/user/edit/${user.user_id}`}>
-                                                        <span className="badge badge-complete">Edit</span>
+                                                        <a href={`/user/edit/${user.id_table_user}`}>
+                                                        <span onClick={() => {window.location.href="/user"}} className="badge badge-complete">Edit</span>
                                                         </a>
-                                                        <a href={`/user/delete/${user.user_id}`} 
-                                                        onClick={() => deleteUser(user.user_id)}>
-                                                            <span className="badge badge-danger">Delete</span>
+                                                        < a onClick={() => deleteUser(user.id_table_user)}>
+                                                            <span onClick={() => {window.location.href="/user"}} className="badge badge-danger">Delete</span>
                                                         </a>
                                                         </td>
                                                         </tr>

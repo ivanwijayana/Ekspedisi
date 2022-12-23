@@ -23,4 +23,6 @@ function SAKaryawan(){
     )
 }
 
+
+
 export default SAKaryawan;

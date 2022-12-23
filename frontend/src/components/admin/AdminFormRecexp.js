@@ -7,6 +7,7 @@ function AdminFormRecexp(){
     const [namacabangsebelum, setNamaCabangSebelum] = useState('');
     const [idadmin, setIdAdmin] = useState('');
     const [namaadmin, setNamaAdmin] = useState('');    
+    const [waktupenerimaan, setWaktuPenerimaan] = useState('');
     const [resi, setResi] = useState('');
     const [idekspedisi, setIdEkspedisi] = useState('');
     const navigate = useNavigate();
@@ -18,6 +19,7 @@ function AdminFormRecexp(){
             nama_cabang_sebelum:namacabangsebelum,
             id_admin:idadmin,
             nama_admin:namaadmin,
+            waktu_penerimaan: waktupenerimaan,
             resi:resi,
             id_ekspedisi:idekspedisi
         });
@@ -60,9 +62,15 @@ function AdminFormRecexp(){
                                     </div>
                                 </div>
                                 <div class="row form-group">
+                                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">Waktu Penerimaan</label></div>
+                                    <div class="col-12 col-md-9">
+                                        <input type="text" id="waktu-penerimaan-input" name="waktu_penerimaan_input" placeholder="Tuliskan Waktu Penerimaan" class="form-control" onChange={(e) => setWaktuPenerimaan(e.target.value)} value={waktupenerimaan}/>
+                                    </div>
+                                </div>
+                                <div class="row form-group">
                                     <div class="col col-md-3"><label for="text-input" class=" form-control-label">Resi Barang</label></div>
                                     <div class="col-12 col-md-9">
-                                        <input type="number" id="resi-input" name="resi_input" placeholder="Tuliskan Resi" class="form-control" onChange={(e) => setResi(e.target.value)} value={resi}/>
+                                        <input type="text" id="resi-input" name="resi_input" placeholder="Tuliskan Resi" class="form-control" onChange={(e) => setResi(e.target.value)} value={resi}/>
                                     </div>
                                 </div>
                                 <div class="row form-group">
@@ -73,8 +81,11 @@ function AdminFormRecexp(){
                                 </div>
                                             
                                 <div className="card-footer">
-                                    <button type="submit" className="btn btn-primary btn-sm">
+                                    <button onClick={() => {window.location.href="/recexp"}} type="submit" className="btn btn-primary btn-sm">
                                         <i className="fa fa-dot-circle-o"></i> Submit
+                                    </button>
+                                    <button onClick={() => {window.location.href="/recexp/form"}} type="reset" className="btn btn-danger btn-sm">
+                                        <i className="fa fa-ban"></i> Reset
                                     </button>
                                 </div>
                             </form>

@@ -1,6 +1,6 @@
 import axios from 'axios';
-import React, { useState, useEffect } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function AdminEditRecexp(){
     const [idbarang, setIdBarang] = useState('');
@@ -20,6 +20,7 @@ function AdminEditRecexp(){
             setNamaCabangSebelum(res.data.nama_cabang_sebelum);
             setIdAdmin(res.data.id_admin);
             setNamaAdmin(res.data.nama_admin);
+            setWaktuPenerimaan(res.data.waktu_penerimaan);
             setResi(res.data.resi);
             setIdEkspedisi(res.data.id_ekspedisi);
         });
@@ -33,6 +34,7 @@ function AdminEditRecexp(){
         nama_cabang_sebelum:namacabangsebelum,
         id_admin:idadmin,
         nama_admin:namaadmin,
+        waktu_penerimaan: waktupenerimaan,
         resi:resi,
         id_ekspedisi:idekspedisi
 };
@@ -59,7 +61,7 @@ function AdminEditRecexp(){
                                 <div className="row form-group">
                                     <div className="col col-md-3"><label for="text-input" className=" form-control-label">ID Barang</label></div>
                                     <div className="col-12 col-md-9">
-                                        <input type="number"  id="id-barang-input" name="id_barang_input" placeholder="Tuliskan ID Barang" className="form-control" onChange={(e) => setIdBarang(e.target.value)} value={idbarang}/>
+                                        <input type="number" id="id-barang-input" name="id_barang_input" placeholder="Tuliskan ID Barang" className="form-control" onChange={(e) => setIdBarang(e.target.value)} value={idbarang}/>
                                     </div>
                                 </div>
                                 <div class="row form-group">
@@ -71,7 +73,7 @@ function AdminEditRecexp(){
                                 <div class="row form-group">
                                     <div class="col col-md-3"><label for="text-input" class=" form-control-label">ID Admin</label></div>
                                     <div class="col-12 col-md-9">
-                                        <input type="number"  id="id-admin-input" name="id_admin_input" placeholder="Tuliskan ID Admin" class="form-control" onChange={(e) => setIdAdmin(e.target.value)} value={idadmin}/>
+                                        <input type="number" id="id-admin-input" name="id_admin_input" placeholder="Tuliskan ID Admin" class="form-control" onChange={(e) => setIdAdmin(e.target.value)} value={idadmn}/>
                                     </div>
                                 </div>
                                 <div class="row form-group">
@@ -81,21 +83,30 @@ function AdminEditRecexp(){
                                     </div>
                                 </div>
                                 <div class="row form-group">
+                                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">Waktu Penerimaan</label></div>
+                                    <div class="col-12 col-md-9">
+                                        <input type="text" id="waktu-penerimaan-input" name="waktu_penerimaan_input" placeholder="Tuliskan Waktu Penerimaan" class="form-control" onChange={(e) => setWaktuPenerimaan(e.target.value)} value={waktupenerimaan}/>
+                                    </div>
+                                </div>
+                                <div class="row form-group">
                                     <div class="col col-md-3"><label for="text-input" class=" form-control-label">Resi Barang</label></div>
                                     <div class="col-12 col-md-9">
-                                        <input type="number"  id="resi-input" name="resi_input" placeholder="Tuliskan Resi" class="form-control" onChange={(e) => setResi(e.target.value)} value={resi}/>
+                                        <input type="text" id="resi-input" name="resi_input" placeholder="Tuliskan Resi" class="form-control" onChange={(e) => setResi(e.target.value)} value={resi}/>
                                     </div>
                                 </div>
                                 <div class="row form-group">
                                     <div class="col col-md-3"><label for="text-input" class=" form-control-label">ID Ekspedisi</label></div>
                                     <div class="col-12 col-md-9">
-                                        <input type="number"  id="id-ekspedisi-input" name="id_ekspedisi_input" placeholder="Tuliskan ID Ekspedisi" class="form-control" onChange={(e) => setIdEkspedisi(e.target.value)} value={idekspedisi}/>
+                                        <input type="number" id="id-ekspedisi-input" name="id_ekspedisi_input" placeholder="Tuliskan ID Ekspedisi" class="form-control" onChange={(e) => setIdEkspedisi(e.target.value)} value={idekspedisi}/>
                                     </div>
                                 </div>
                                             
                                 <div className="card-footer">
                                     <button type="submit" className="btn btn-primary btn-sm">
                                         <i className="fa fa-dot-circle-o"></i> Submit
+                                    </button>
+                                    <button type="reset" className="btn btn-danger btn-sm">
+                                        <i className="fa fa-ban"></i> Reset
                                     </button>
                                 </div>
                             </form>

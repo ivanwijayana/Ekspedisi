@@ -86,7 +86,7 @@ router.put('/:id', async(req,res)=>{
         id_karyawan: idKaryawan,
         nama_cabang:namaKaryawan,
         cabang_karyawan:cabangKaryawan
-    },
+    }, 
     {
         where:{
             id_table_karyawan:idTableKaryawan

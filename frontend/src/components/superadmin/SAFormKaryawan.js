@@ -7,7 +7,7 @@ function SAFormKaryawan(){
     const [lokasi, setLokasi] = useState('');
     const [id, setId] = useState('');
     const navigate = useNavigate();
-
+ 
     const saveKaryawan = async (e) => {
         e.preventDefault();
         await axios.post('http://localhost:3010/karyawan', {
@@ -46,7 +46,7 @@ function SAFormKaryawan(){
                             </div>
                         </div>
                         <div className="but">
-                            <button type="submit" className="btn btn-primary" style={{margin:'10px 10px'}}>Simpan</button>
+                            <button onClick={() => {window.location.href="/cabang"}} type="submit" className="btn btn-primary" style={{margin:'10px 10px'}}>Simpan</button>
                         </div>
                     </div>
                     </form>

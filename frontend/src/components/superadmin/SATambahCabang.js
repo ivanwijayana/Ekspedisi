@@ -13,6 +13,7 @@ function SATambahCabang(){
             })
     }, []);
 
+    
     const deleteCabang = async (id_table_cabang) => {
         try{
             await axios.delete(`http://localhost:3010/cabang/delete/${id_table_cabang}`)
@@ -20,7 +21,7 @@ function SATambahCabang(){
             alert(error)
         }
     }
-    
+
     return(
         <div className="orders">
             <a href="/cabang/form">
@@ -53,11 +54,10 @@ function SATambahCabang(){
                                                         <td> <span className="name-column">{cabang.lokasi}</span> </td>
                                                         <td>
                                                         <a href={`/cabang/edit/${cabang.id_table_cabang}`}>
-                                                        <span className="badge badge-complete">Edit</span>
+                                                        <span onClick={() => {window.location.href="/cabang"}} className="badge badge-complete">Edit</span>
                                                         </a>
-                                                        <a href={`/cabang`} 
-                                                        onClick={() => deleteCabang(cabang.id_table_cabang)}>
-                                                            <span className="badge badge-danger">Delete</span>
+                                                        <a onClick={() => deleteCabang(cabang.id_table_cabang)}>
+                                                            <span onClick={() => {window.location.href="/cabang"}} className="badge badge-danger">Delete</span>
                                                         </a>
                                                         </td>
                                                         </tr>

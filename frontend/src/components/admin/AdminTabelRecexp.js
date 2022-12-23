@@ -53,16 +53,15 @@ function AdminTabelRecexp(){
                                             <td> <span class="name-column">{recexp.nama_cabang_sebelum}</span></td>
                                             <td> <span class="name-column">{recexp.id_admin}</span></td>
                                             <td> <span class="name-column">{recexp.nama_admin}</span> </td>
-                                            <td> <span class="name-column">{recexp.createdAt}</span> </td>
+                                            <td> <span class="name-column">{recexp.waktu_penerimaan}</span> </td>
                                             <td> <span class="name-column">{recexp.resi}</span> </td>
                                             <td> <span class="name-column">{recexp.id_ekspedisi}</span> </td>
                                             <td>
                                                 <a href={`/recexp/edit/${recexp.id_rec_exp}`}>
                                                     <span className="badge badge-complete">Edit</span>
                                                 </a>
-                                                <a href={`/recexp`} 
-                                                    onClick={() => deleteRecexp(recexp.id_rec_exp)}>
-                                                    <span className="badge badge-danger">Delete</span>
+                                                <a onClick={() => deleteRecexp(recexp.id_rec_exp)}>
+                                                    <span onClick={() => {window.location.href="/recexp"}} className="badge badge-danger">Delete</span>
                                                 </a>
                                             </td>
                                         </tr>
@@ -79,5 +78,3 @@ function AdminTabelRecexp(){
 }
 
 export default AdminTabelRecexp;
-
-

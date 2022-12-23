@@ -50,8 +50,8 @@ function SideSuper(){
                     </li>
                     <li className="menu-item-has-children active dropdown">
                         <a className="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i className="menu-icon fa fa-th"></i>Tambah Akun</a>
-                        <ul className="sub-menu children dropdown-menu">
-                            <li><i className="menu-icon fa fa-user-circle"></i><a href="/admin">Admin</a></li>
+                        <ul className="sub-menu children dropdown-menu">                
+                            <li><i className="menu-icon fa fa-user-circle"></i><a href="/sadmin">Admin</a></li>
                             <li><i className="menu-icon fa fa-users"></i><a href="/user">user</a></li>
                         </ul>
                     </li>

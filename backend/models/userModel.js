@@ -13,7 +13,6 @@ const Product = db.define('table_user',{
         allowNull: false,
         validate: true
     },
-
     username:{
         type: DataTypes.STRING,
         allowNull: false,
@@ -26,5 +25,5 @@ const Product = db.define('table_user',{
     }
 });
  
-
 module.exports = Product;
+

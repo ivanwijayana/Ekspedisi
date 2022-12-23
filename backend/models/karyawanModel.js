@@ -26,3 +26,4 @@ const Product = db.define('table_karyawan',{
 });
  
 module.exports = Product;
+

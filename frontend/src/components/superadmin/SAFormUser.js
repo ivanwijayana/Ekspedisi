@@ -5,13 +5,13 @@ import { useNavigate } from 'react-router-dom';
 function SAFormUser(){
     const [nama, setNama] = useState('');
     const [password, setPassword] = useState('');
-    const [id, setId] = useState('');
+    const [iduser, setIdUser] = useState('');
     const navigate = useNavigate();
 
     const saveUser = async (e) => {
         e.preventDefault();
         await axios.post('http://localhost:3010/user', {
-            user_id: id,
+            user_id: iduser,
             username: nama,
             password: password
         });
@@ -32,27 +32,26 @@ function SAFormUser(){
                                 <label for="company" className=" form-control-label">
                                     ID User
                                 </label>
-                            <input type="text" id="id_cabang" name="id_cabang" placeholder="Enter Cabang ID" className="form-control" onChange={(e) => setId(e.target.value)} value={id}/>                                
+                            <input type="text" id="id_cabang" name="id_cabang" placeholder="Enter User ID" className="form-control" onChange={(e) => setIdUser(e.target.value)} value={iduser}/>                                
                             
                             <label for="vat" className=" form-control-label">
                                 Nama User
                             </label>
-                            <input type="text" id="nama_cabang" name="nama_cabang" placeholder="Enter Cabang Name" className="form-control" onChange={(e) => setNama(e.target.value)} value={nama}/>
+                            <input type="text" id="nama_cabang" name="nama_cabang" placeholder="Enter Username" className="form-control" onChange={(e) => setNama(e.target.value)} value={nama}/>
                             
                             <label for="street" className=" form-control-label">
                                 Password
                             </label>
-                            <input type="text" id="lokasi" name="lokasi" placeholder="Enter Cabang Location" className="form-control" onChange={(e) => setPassword(e.target.value)} value={password}/>
+                            <input type="text" id="lokasi" name="lokasi" placeholder="Enter Password" className="form-control" onChange={(e) => setPassword(e.target.value)} value={password}/>
                             </div>
                         </div>
                         <div className="but">
-                            <button type="submit" className="btn btn-primary" style={{margin:'10px 10px'}}>Simpan</button>
+                            <button onClick={() => {window.location.href="/user"}} type="submit" className="btn btn-primary" style={{margin:'10px 10px'}}>Simpan</button>
                         </div>
                     </div>
-                </form>
+                    </form>
             </div>
     )
 }
 
 export default SAFormUser;
-
