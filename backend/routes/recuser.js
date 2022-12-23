@@ -23,7 +23,6 @@ router.post('/', async(req,res)=>{
     const namaPenerima = req.body.nama_penerima;
     const kota = req.body.kota;
     const alamat = req.body.alamat;
-    const waktuPenerimaan = req.body.waktu_penerimaan;
     const resiBarang = req.body.resi_barang;
     const recuser = await Recuser.create({
         id_barang: idBarang,
@@ -33,14 +32,13 @@ router.post('/', async(req,res)=>{
         nama_penerima:namaPenerima,
         kota: kota,
         alamat:alamat,
-        waktu_penerimaan: waktuPenerimaan,
         resi_barang:resiBarang
     });
     res.json(recuser)
 });
 
 router.put('/:id', async(req,res)=>{
-    const idRecuser = req.body.id_rec_user;
+    const idRecuser = req.params.id;
     const idBarang = req.body.id_barang;
     const namaBarang = req.body.nama_barang;
     const namaCabangAsal = req.body.nama_cabang_asal;
@@ -48,7 +46,6 @@ router.put('/:id', async(req,res)=>{
     const namaPenerima = req.body.nama_penerima;
     const kota = req.body.kota;
     const alamat = req.body.alamat;
-    const waktuPenerimaan = req.body.waktu_penerimaan;
     const resiBarang = req.body.resi_barang;
     const recuser = await Recuser.update({
         id_barang: idBarang,
@@ -58,12 +55,11 @@ router.put('/:id', async(req,res)=>{
         nama_penerima:namaPenerima,
         kota: kota,
         alamat:alamat,
-        waktu_penerimaan: waktuPenerimaan,
         resi_barang:resiBarang
     },
     {
         where:{
-            id_rec_exp: idRecuser
+            id_rec_user: idRecuser
         }
     });
     res.json(recuser)

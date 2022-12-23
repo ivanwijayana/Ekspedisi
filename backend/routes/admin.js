@@ -26,7 +26,7 @@ router.post('/', async(req,res)=>{
 });
 
 router.put('/:id', async(req,res)=>{
-    const adminId = req.body.admin_id;
+    const adminId = req.params.id;
     const adminEmail = req.body.admin_email;
     const password = req.body.password;
     const admin = await Admin.update({

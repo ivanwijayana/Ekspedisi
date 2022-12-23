@@ -20,7 +20,6 @@ router.post('/', async(req,res)=>{
     const namaCabangSebelum = req.body.nama_cabang_sebelum;
     const idAdmin = req.body.id_admin;
     const namaAdmin = req.body.nama_admin;
-    const waktuPenerimaan = req.body.waktu_penerimaan;
     const resi = req.body.resi;
     const idEkspedisi = req.body.id_ekspedisi;
     const recexp = await Recexp.create({
@@ -28,7 +27,6 @@ router.post('/', async(req,res)=>{
         nama_cabang_sebelum:namaCabangSebelum,
         id_admin: idAdmin,
         nama_admin: namaAdmin,
-        waktu_penerimaan: waktuPenerimaan,
         resi:resi,
         id_ekspedisi:idEkspedisi
     });
@@ -36,12 +34,11 @@ router.post('/', async(req,res)=>{
 });
 
 router.put('/:id', async(req,res)=>{
-    const idRecexp = req.body.id_rec_exp;
+    const idRecexp = req.params.id;
     const idBarang = req.body.id_barang;
     const namaCabangSebelum = req.body.nama_cabang_sebelum;
     const idAdmin = req.body.id_admin;
     const namaAdmin = req.body.nama_admin;
-    const waktuPenerimaan = req.body.waktu_penerimaan;
     const resi = req.body.resi;
     const idEkspedisi = req.body.id_ekspedisi;
     const recexp = await Recexp.update({
@@ -49,7 +46,6 @@ router.put('/:id', async(req,res)=>{
         nama_cabang_sebelum:namaCabangSebelum,
         id_admin: idAdmin,
         nama_admin: namaAdmin,
-        waktu_penerimaan: waktuPenerimaan,
         resi:resi,
         id_ekspedisi:idEkspedisi
     },

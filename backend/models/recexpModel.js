@@ -28,11 +28,6 @@ const Product = db.define('rec_exp',{
         allowNull: false,
         validate: true
     },
-    waktu_penerimaan:{
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate: true
-    },
     resi:{
         type: DataTypes.INTEGER,
         allowNull: false,
