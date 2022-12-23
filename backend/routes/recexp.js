@@ -6,6 +6,15 @@ router.get ('/', async (req,res) => {
     res.json(recexp)
 });
 
+router.get ('/:id', async (req,res) => {
+    const recexp = await Recexp.findOne({
+        where:{
+            id_rec_exp:req.params.id
+        }
+    });
+    res.json(recexp)
+});
+
 router.post('/', async(req,res)=>{
     const idBarang = req.body.id_barang;
     const namaCabangSebelum = req.body.nama_cabang_sebelum;
