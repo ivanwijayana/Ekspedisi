@@ -1,9 +1,9 @@
 import React from "react";
-import AdminTabelRecuser from "./admin/AdminTabelRecuser";
+import AdminTabelSenrec from "./admin/AdminTabelSenrec";
 import SuperHeader from "./header/SuperHeader";
 import SideAdmin from "./sidebar/SideAdmin";
 
-function AdminRecuser(){
+function AdminSenrec(){
     const containerStyles = {
     display: 'flex',
     flexDirection: 'row',
@@ -16,11 +16,11 @@ function AdminRecuser(){
             <div className="left-panel" style={{width:'5%'}}>
             <SideAdmin/>
             </div>
-            <div className="content" style={{marginRight:'-15%'}}>
-            <AdminTabelRecuser/>
+            <div className="content">
+            <AdminTabelSenrec/>
             </div>
         </div>
     )
 }
 
-export default AdminRecuser;
+export default AdminSenrec;
