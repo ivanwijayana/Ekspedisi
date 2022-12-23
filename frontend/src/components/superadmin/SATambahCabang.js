@@ -20,7 +20,7 @@ function SATambahCabang(){
             alert(error)
         }
     }
-
+    
     return(
         <div className="orders">
             <a href="/cabang/form">
@@ -55,7 +55,7 @@ function SATambahCabang(){
                                                         <a href={`/cabang/edit/${cabang.id_table_cabang}`}>
                                                         <span className="badge badge-complete">Edit</span>
                                                         </a>
-                                                        <a href={`/cabang/delete/${cabang.id_table_cabang}`} 
+                                                        <a href={`/cabang`} 
                                                         onClick={() => deleteCabang(cabang.id_table_cabang)}>
                                                             <span className="badge badge-danger">Delete</span>
                                                         </a>

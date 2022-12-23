@@ -55,7 +55,7 @@ function SATambahKaryawan(){
                                                         <a href={`/karyawan/edit/${karyawan.id_table_karyawan}`}>
                                                         <span className="badge badge-complete">Edit</span>
                                                         </a>
-                                                        <a href={`/karyawan/delete/${karyawan.id_table_karyawan}`} 
+                                                        <a href={`/karyawan`} 
                                                         onClick={() => deleteKaryawan(karyawan.id_table_karyawan)}>
                                                             <span className="badge badge-danger">Delete</span>
                                                         </a>
