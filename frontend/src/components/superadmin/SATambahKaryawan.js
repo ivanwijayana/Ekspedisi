@@ -3,7 +3,7 @@ import axios from "axios";
 
 function SATambahKaryawan(){
     const [karyawan, setKaryawan] = useState([]);    
- 
+
     useEffect(() => {
         axios.get('http://localhost:3010/karyawan')
             .then(res => {
@@ -53,10 +53,11 @@ function SATambahKaryawan(){
                                                         <td> <span className="name-column">{karyawan.cabang_karyawan}</span> </td>
                                                         <td>
                                                         <a href={`/karyawan/edit/${karyawan.id_table_karyawan}`}>
-                                                        <span onClick={() => {window.location.href="/cabang"}} className="badge badge-complete">Edit</span>
+                                                        <span className="badge badge-complete">Edit</span>
                                                         </a>
-                                                        <a href={`/karyawan`}>
-                                                            <span onClick={() => {window.location.href="/cabang"}} className="badge badge-danger">Delete</span>
+                                                        <a href={`/karyawan`} 
+                                                        onClick={() => deleteKaryawan(karyawan.id_table_karyawan)}>
+                                                            <span className="badge badge-danger">Delete</span>
                                                         </a>
                                                         </td>
                                                         </tr>

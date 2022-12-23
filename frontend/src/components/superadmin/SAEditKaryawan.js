@@ -8,7 +8,7 @@ function SAEditKaryawan(){
     const [idkaryawan, setIdKaryawan] = useState('');
     const navigate = useNavigate();
     const { id } = useParams();
- 
+
     useEffect(() => {
         try{
             axios.get(`http://localhost:3010/karyawan/${id}`).then((res) => {
@@ -35,6 +35,7 @@ function SAEditKaryawan(){
         }
     }
 
+
     return(
         <div className="col-lg-6">
                     <form className="form-horizontal" onSubmit={UpdateCabang}>
@@ -43,12 +44,12 @@ function SAEditKaryawan(){
                         <div className="card-body card-block">
                             <div className="form-group">
                                 <label for="company" className=" form-control-label">
-                                    ID Karyawan
+                                    ID Cabang
                                 </label>
                             <input type="text" id="id_cabang" name="id_cabang" placeholder="Enter Cabang ID" className="form-control" onChange={(e) => setIdKaryawan(e.target.value)} value={idkaryawan}/>                                
                             
                             <label for="vat" className=" form-control-label">
-                                Nama karyawan
+                                Nama Cabang
                             </label>
                             <input type="text" id="nama_cabang" name="nama_cabang" placeholder="Enter Cabang Name" className="form-control" onChange={(e) => setNama(e.target.value)} value={nama}/>
                             
@@ -59,10 +60,10 @@ function SAEditKaryawan(){
                             </div>
                         </div>
                         <div className="but">
-                            <button onClick={() => {window.location.href="/cabang"}} type="submit" className="btn btn-primary">Simpan</button>
+                            <button type="submit" className="btn btn-primary">Simpan</button>
                         </div>
                     </div>
-                </form>
+                    </form>
             </div>
     )
 }
