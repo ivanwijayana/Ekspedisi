@@ -6,7 +6,7 @@ router.get ('/', async (req,res) => {
     res.json(recuser)
 });
 
-router.get ('/', async (req,res) => {
+router.get ('/:id', async (req,res) => {
     const recuser = await Recuser.findOne({
         where:{
             id_rec_user:req.params.id
