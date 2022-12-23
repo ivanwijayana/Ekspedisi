@@ -16,7 +16,7 @@ function AdminSenrec(){
             <div className="left-panel" style={{width:'5%'}}>
             <SideAdmin/>
             </div>
-            <div className="content">
+            <div className="content" style={{marginRight:'-15%'}}>
             <AdminTabelSenrec/>
             </div>
         </div>

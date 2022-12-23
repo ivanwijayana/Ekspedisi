@@ -58,13 +58,13 @@ function AdminTabelRecuser(){
                                             <td> <span className="name-column">{recuser.nama_penerima}</span> </td>
                                             <td> <span className="name-column">{recuser.kota}</span></td>
                                             <td> <span className="name-column">{recuser.alamat}</span></td>
-                                            <td> <span className="name-column">{recuser.waktu_penerimaan}</span> </td>
+                                            <td> <span className="name-column">{recuser.createdAt}</span> </td>
                                             <td> <span className="name-column">{recuser.resi_barang}</span> </td>
                                             <td>
                                                 <a href={`/recuser/edit/${recuser.id_rec_user}`}>
                                                     <span className="badge badge-complete">Edit</span>
                                                 </a>
-                                                <a href={`/recuser/delete/${recuser.id_rec_user}`} 
+                                                <a href={`/recuser`} 
                                                     onClick={() => deleteRecuser(recuser.id_rec_user)}>
                                                     <span className="badge badge-danger">Delete</span>
                                                 </a>

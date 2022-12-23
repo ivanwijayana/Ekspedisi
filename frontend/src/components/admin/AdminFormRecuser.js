@@ -10,7 +10,6 @@ function AdminFormRecuser(){
     const [namapenerima, setNamaPenerima] = useState('');
     const [kota, setKota] = useState('');
     const [alamat, setAlamat] = useState('');
-    const [waktupenerimaan, setWaktuPenerimaan] = useState('');
     const [resibarang, setResiBarang] = useState('');
     const navigate = useNavigate();
 
@@ -24,7 +23,6 @@ function AdminFormRecuser(){
             nama_penerima:namapenerima,
             kota: kota,
             alamat:alamat,
-            waktu_penerimaan: waktupenerimaan,
             resi_barang:resibarang
         });
         navigate("/recuser");
@@ -81,12 +79,6 @@ function AdminFormRecuser(){
                                     <div className="col col-md-3"><label for="text-input" className=" form-control-label">Alamat</label></div>
                                     <div className="col-12 col-md-9">
                                         <input type="text" id="alamat-input" name="alamat_input" placeholder="Tuliskan Alamat" className="form-control" onChange={(e) => setAlamat(e.target.value)} value={alamat}/>
-                                    </div>
-                                </div>
-                                <div className="row form-group">
-                                    <div className="col col-md-3"><label for="text-input" className=" form-control-label">Waktu Penerimaan</label></div>
-                                    <div className="col-12 col-md-9">
-                                        <input type="text" id="waktu-penerima-user-input" name="waktu_penerima_user_input" placeholder="Tuliskan Waktu Penerimaan" className="form-control" onChange={(e) => setWaktuPenerimaan(e.target.value)} value={waktupenerimaan}/>
                                     </div>
                                 </div>
                                 <div className="row form-group">

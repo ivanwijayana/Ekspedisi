@@ -13,9 +13,9 @@ function SATambahAdmin() {
             })
     }, []);
 
-    const deleteAdmin = async (id_table_admin) => {
+    const deleteAdmin = async (admin_id) => {
         try{
-            await axios.delete(`http://localhost:3010/admin/delete/${id_table_admin}`)
+            await axios.delete(`http://localhost:3010/admin/delete/${admin_id}`)
         } catch (error){
             alert(error)
         }
@@ -46,13 +46,13 @@ function SATambahAdmin() {
                                             </thead>
                                             <tbody>
                                             {admin.map((admin, index) => (
-                                                <tr key={admin.id_table_admin}>
+                                                <tr key={admin.admin_id}>
                                                     <td className="serial"><span className="id-column">{index + 1}</span></td>
                                                     <td> <span className="name-column">{admin.admin_email}</span></td>
                                                     <td> <span className="name-column">{admin.password}</span> </td>
                                                     <td>
-                                                        <a href={`/admin/edit/${admin.id_table_admin}`}/><span className="badge badge-complete">Edit</span>
-                                                            <a href={`/admin`} onClick={() => deleteAdmin(admin.id_table_admin)}><span className="badge badge-danger">Delete</span></a>
+                                                        <a href={`/admin/edit/${admin.admin_id}`}><span className="badge badge-complete">Edit</span></a>
+                                                            <a href={`/admin`} onClick={() => deleteAdmin(admin.admin_id)}><span className="badge badge-danger">Delete</span></a>
                                                     </td>
                                                 </tr>
 ))}   

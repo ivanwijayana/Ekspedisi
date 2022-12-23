@@ -120,7 +120,7 @@ function AdminEditSentran() {
                             <div class="row form-group">
                                 <div class="col col-md-3"><label for="text-input" class=" form-control-label">Resi Barang</label></div>
                                 <div class="col-12 col-md-9">
-                                    <input type="text" placeholder="Tuliskan Resi" class="form-control" onChange={(e) => setResiBarang(e.target.value)} value={resibarang} />
+                                    <input type="number" placeholder="Tuliskan Resi" class="form-control" onChange={(e) => setResiBarang(e.target.value)} value={resibarang} />
                                 </div>
                             </div>
                             <div class="row form-group">

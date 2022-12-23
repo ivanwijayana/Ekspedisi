@@ -10,7 +10,6 @@ function AdminEditRecuser(){
     const [namapenerima, setNamaPenerima] = useState('');
     const [kota, setKota] = useState('');
     const [alamat, setAlamat] = useState('');
-    const [waktupenerimaan, setWaktuPenerimaan] = useState('');
     const [resibarang, setResiBarang] = useState('');
     const navigate = useNavigate();
     const { id } = useParams();
@@ -25,7 +24,6 @@ function AdminEditRecuser(){
             setNamaPenerima(res.data.nama_penerima);
             setKota(res.data.kota);
             setAlamat(res.data.alamat);
-            setWaktuPenerimaan(res.data.waktu_penerimaan);
             setResiBarang(res.data.resi_barang);
         });
         } catch (error){
@@ -41,7 +39,6 @@ function AdminEditRecuser(){
             nama_penerima:namapenerima,
             kota: kota,
             alamat:alamat,
-            waktu_penerimaan: waktupenerimaan,
             resi_barang:resibarang
     };
 
@@ -107,24 +104,15 @@ function AdminEditRecuser(){
                                 </div>
                             </div>
                             <div className="row form-group">
-                                <div className="col col-md-3"><label for="text-input" className=" form-control-label">Waktu Penerimaan</label></div>
-                                <div className="col-12 col-md-9">
-                                    <input type="text" id="waktu-penerima-user-input" name="waktu_penerima_user_input" placeholder="Tuliskan Waktu Penerimaan" className="form-control" onChange={(e) => setWaktuPenerimaan(e.target.value)} value={waktupenerimaan}/>
-                                </div>
-                            </div>
-                            <div className="row form-group">
                                 <div className="col col-md-3"><label for="text-input" className=" form-control-label">Resi Barang</label></div>
                                 <div className="col-12 col-md-9">
-                                    <input type="text" id="resi-input" name="resi_input" placeholder="Tuliskan Resi" className="form-control" onChange={(e) => setResiBarang(e.target.value)} value={resibarang}/>
+                                    <input type="number" id="resi-input" name="resi_input" placeholder="Tuliskan Resi" className="form-control" onChange={(e) => setResiBarang(e.target.value)} value={resibarang}/>
                                 </div>
                             </div>
                                         
                             <div className="card-footer">
                                 <button type="submit" className="btn btn-primary btn-sm">
                                     <i className="fa fa-dot-circle-o"></i> Submit
-                                </button>
-                                <button type="reset" className="btn btn-danger btn-sm">
-                                    <i className="fa fa-ban"></i> Reset
                                 </button>
                             </div>
                         </form>

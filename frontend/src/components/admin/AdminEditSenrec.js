@@ -66,13 +66,13 @@ function AdminEditSenrec() {
                             <div class="row form-group">
                                 <div class="col col-md-3"><label for="text-input" class=" form-control-label">ID Barang</label></div>
                                 <div class="col-12 col-md-9">
-                                    <input type="number" placeholder="Tuliskan ID Barang" class="form-control" onChange={(e) => setIdBarang(e.target.value)} value={idbarang} />
+                                    <input type="number"  placeholder="Tuliskan ID Barang" class="form-control" onChange={(e) => setIdBarang(e.target.value)} value={idbarang} />
                                 </div>
                             </div>
                             <div class="row form-group">
                                 <div class="col col-md-3"><label for="text-input" class=" form-control-label">ID Admin</label></div>
                                 <div class="col-12 col-md-9">
-                                    <input type="number" placeholder="Tuliskan ID Admin" class="form-control" onChange={(e) => setIdAdmin(e.target.value)} value={idadmin} />
+                                    <input type="number"  placeholder="Tuliskan ID Admin" class="form-control" onChange={(e) => setIdAdmin(e.target.value)} value={idadmin} />
                                 </div>
                             </div>
                             <div class="row form-group">
@@ -84,7 +84,7 @@ function AdminEditSenrec() {
                             <div class="row form-group">
                                 <div class="col col-md-3"><label for="text-input" class=" form-control-label">Nama Penerima</label></div>
                                 <div class="col-12 col-md-9">
-                                    <input type="number" placeholder="Tuliskan Nama Penerima" class="form-control" onChange={(e) => setNamaPenerima(e.target.value)} value={namapenerima} />
+                                    <input type="text" placeholder="Tuliskan Nama Penerima" class="form-control" onChange={(e) => setNamaPenerima(e.target.value)} value={namapenerima} />
                                 </div>
                             </div>
                             <div class="row form-group">
@@ -108,7 +108,7 @@ function AdminEditSenrec() {
                             <div class="row form-group">
                                 <div class="col col-md-3"><label for="text-input" class=" form-control-label">ID Pengiriman</label></div>
                                 <div class="col-12 col-md-9">
-                                    <input type="number" placeholder="Tuliskan ID Pengiriman" class="form-control" onChange={(e) => setIdPengiriman(e.target.value)} value={idpengiriman} />
+                                    <input type="number"  placeholder="Tuliskan ID Pengiriman" class="form-control" onChange={(e) => setIdPengiriman(e.target.value)} value={idpengiriman} />
                                 </div>
                             </div>
                             <div class="card-footer">
