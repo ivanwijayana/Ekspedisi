@@ -6,6 +6,15 @@ router.get ('/', async (req,res) => {
     res.json(karyawan)
 });
 
+router.get ('/:id', async (req,res) => {
+    const karyawan = await Karyawan.findOne({
+        where:{
+            id_table_karyawan:req.params.id
+        }
+    });
+    res.json(karyawan)
+});
+
 router.post('/', async(req,res)=>{
     const idKaryawan = req.body.id_karyawan;
     const namaKaryawan = req.body.nama_karyawan;

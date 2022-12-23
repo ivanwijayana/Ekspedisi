@@ -6,6 +6,15 @@ router.get ('/', async (req,res) => {
     res.json(cabang)
 });
 
+router.get ('/:id', async (req,res) => {
+    const cabang = await Cabang.findOne({
+        where:{
+            id_table_cabang:req.params.id
+        }
+    });
+    res.json(cabang)
+});
+
 router.post('/', async(req,res)=>{
     const idCabang = req.body.id_cabang;
     const namaCabang = req.body.nama_cabang;
