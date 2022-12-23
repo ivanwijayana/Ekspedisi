@@ -10,40 +10,40 @@ const dotenv = require('dotenv');
 const passport = require('passport');
 const db = require('./config/database');
 const cabangModel = require('./models/cabangModel');
-const karyawanModel = require('./models/karyawanModel');
 const recuserModel = require('./models/recuserModel');
 const recexpModel = require('./models/recexpModel');
+const karyawanModel = require('./models/karyawanModel');
+const sentranModel = require('./models/sentranModel');
+const senrecModel = require('./models/senrecModel');
+const adminModel = require('./models/adminModel');
 
 try{
     db.authenticate();
     console.log("succes");
     cabangModel.sync();
-    karyawanModel.sync();
     recexpModel.sync();
     recuserModel.sync();
-
-    //isi sesuai fitur yang akan di tambahkan misal cabangMOdel.sync(); 
+    karyawanModel.sync();
+    sentranModel.sync();
+    senrecModel.sync();
+    adminModel.sync();
 } catch (error){
     console.log(error);
 }
 
 dotenv.config();
 
-const connection = mysql.createConnection({
-    host    : 'localhost',
-    user    : 'root',
-    password: '',
-    database: 'app_ekspedisi'
-});
-
 app.use(cors());
 app.use('/static', express.static("public"));
 app.use(express.json());
 
 app.use('/cabang', require('./routes/cabang'));
-app.use('/karyawan', require('./routes/karyawan'));
 app.use('/recuser', require('./routes/recuser'));
 app.use('/recexp', require('./routes/recexp'));
+app.use('/karyawan', require('./routes/karyawan'));
+app.use('/sentran', require('./routes/sentran'));
+app.use('/senrec', require('./routes/senrec'));
+app.use('/admin', require('./routes/admin'));
 
 app.use(express.urlencoded({extended:true}))
 app.use(session({
