@@ -6,6 +6,20 @@ import LoginUser from "./LoginUser";
 //Super Admin
   //Form
 import SAFormCabang from "./superadmin/SAFormCabang";
+<<<<<<< HEAD
+=======
+import SAEditCabang from "./superadmin/SAEditCabang";
+import SACabang from "./SACabang";
+import SAKaryawan from "./SAKaryawan";
+
+//user
+import SAUser from "./SAUser";
+import SATambahUser from "./superadmin/SATambahUser";
+import SAFormUser from "./superadmin/SAFormUser";
+import SAEditUser from "./superadmin/SAEditUser";
+
+//karyawan
+>>>>>>> 10d86d1 (tambah user)
 import SAFormKaryawan from "./superadmin/SAFormKaryawan";
 import SAFormAdmin from "./superadmin/SAFormAdmin";
   //Edit
@@ -34,6 +48,7 @@ import AdminRecexp from "./AdminRecexp";
 import AdminRecuser from "./AdminRecuser";
 import AdminSentran from "./AdminSentran";
 
+
 function App() {
   return (
     <BrowserRouter>
@@ -54,9 +69,22 @@ function App() {
         <Route path='/karyawan/edit/:id' element={<SAEditKaryawan />} />
         <Route path='/karyawan/form' element={<SAFormKaryawan />} />
 
+<<<<<<< HEAD
         <Route path='/recexp' element={<AdminRecexp />} />        
         <Route path='/recexp/delete/:id' element={<AdminRecexp />} />
         <Route path='/recexp/edit/:id' element={<AdminEditRecexp />} />
+=======
+        <Route path='/user' element={<SATambahUser/>} />
+        <Route path='/user' element={<SAUser/>} />
+        <Route path='/user/form' element={<SAFormUser/>} />
+        <Route path='/user/edit/:id' element={<SAEditUser />} />
+        <Route path='/user/delete/:id' element={<SAEditUser />} />
+
+        <Route path='/login-superadmin' element={<SACabang />} />
+        <Route path='/login-admin' element={<AdminRecexp />} />
+        <Route path='/admin' element={<AdminRecexp />} />
+        <Route path='/recexp' element={<AdminRecexp />} />
+>>>>>>> 10d86d1 (tambah user)
         <Route path='/recexp/form' element={<AdminFormRecexp />} />
 
         <Route path='/recuser' element={<AdminRecuser />} />
