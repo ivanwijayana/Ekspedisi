@@ -13,6 +13,9 @@ import SAKaryawan from "./SAKaryawan";
 import SAFormKaryawan from "./superadmin/SAFormKaryawan";
 import SAEditKaryawan from "./superadmin/SAEditKaryawan";
 import SATambahKaryawan from "./superadmin/SATambahKaryawan";
+import SAFormAdmin from "./superadmin/SAFormAdmin";
+import SAEditAdmin from "./superadmin/SAEditAdmin";
+import SAAdmin from "./SAAdmin";
 
 function App() {
   return (
@@ -35,11 +38,15 @@ function App() {
         <Route path='/karyawan/edit/:id' element={<SAEditKaryawan />} />
         <Route path='/karyawan/form' element={<SAFormKaryawan />} />
 
-        <Route path='/admin' element={<AdminRecexp />} />
         <Route path='/recexp' element={<AdminRecexp />} />
         <Route path='/recexp/form' element={<AdminFormRecexp />} />
         <Route path='/recuser' element={<AdminRecuser />} />
         <Route path='/recuser/form' element={<AdminFormRecuser />} />
+
+        <Route path='/admin' element={<SAAdmin />} />
+        <Route path='/admin/delete/:id' element={<SAAdmin />} />
+        <Route path='/admin/edit/:id' element={<SAEditAdmin />} />
+        <Route path='/admin/form' element={<SAFormAdmin />} />
       </Routes>
     </BrowserRouter>
   );
