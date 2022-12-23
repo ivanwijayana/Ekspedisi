@@ -22,7 +22,7 @@ router.post('/', async(req,res)=>{
     const namaPenerima = req.body.nama_penerima;
     const alamat = req.body.alamat;
     const resi = req.body.resi;
-    const idEkspedisi = req.body.id_ekspedisi;
+    const idEkspedisi = req.body.id_pengiriman;
     const senrec = await Senrec.create({
         id_barang: idBarang,
         id_admin: idAdmin,
@@ -30,20 +30,20 @@ router.post('/', async(req,res)=>{
         nama_penerima:namaPenerima,
         alamat:alamat,
         resi:resi,
-        id_ekspedisi:idEkspedisi
+        id_pengiriman:idEkspedisi
     });
     res.json(senrec)
 });
 
 router.put('/:id', async(req,res)=>{
-    const idSenrec = req.body.id_sen_rec;
+    const idSenrec = req.params.id;
     const idBarang = req.body.id_barang;
     const idAdmin = req.body.id_admin;
     const namaAdmin = req.body.nama_admin;
     const namaPenerima = req.body.nama_penerima;
     const alamat = req.body.alamat;
     const resi = req.body.resi;
-    const idEkspedisi = req.body.id_ekspedisi;
+    const idEkspedisi = req.body.id_pengiriman;
     const senrec = await Senrec.update({
         id_barang: idBarang,
         id_admin: idAdmin,
@@ -51,9 +51,8 @@ router.put('/:id', async(req,res)=>{
         nama_penerima:namaPenerima,
         alamat:alamat,
         resi:resi,
-        id_ekspedisi:idEkspedisi
-    },
-    {
+        id_pengiriman:idEkspedisi
+    }, {
         where:{
             id_sen_rec: idSenrec
         }

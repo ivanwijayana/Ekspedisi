@@ -23,7 +23,7 @@ router.post('/', async(req,res)=>{
     const namaAdmin = req.body.nama_admin;
     const idCabangPenerima = req.body.id_cabang_penerima;
     const namaCabangPenerima = req.body.nama_cabang_penerima;
-    const resi_barang = req.body.resi_barang;
+    const resibarang = req.body.resi_barang;
     const idEkspedisi = req.body.id_ekspedisi;
     const sentran = await Sentran.create({
         id_barang: idBarang,
@@ -33,14 +33,14 @@ router.post('/', async(req,res)=>{
         nama_admin:namaAdmin,
         id_cabang_penerima: idCabangPenerima,
         nama_cabang_penerima:namaCabangPenerima,
-        resi_barang:resi_barang,
+        resi_barang:resibarang,
         id_ekspedisi:idEkspedisi
     });
     res.json(sentran)
 });
 
 router.put('/:id', async(req,res)=>{
-    const idSentran = req.body.id_sen_tran;
+    const idSentran = req.params.id;
     const idBarang = req.body.id_barang;
     const idCabangAsal = req.body.id_cabang_asal;
     const namaCabangAsal = req.body.nama_cabang_asal;
@@ -48,7 +48,7 @@ router.put('/:id', async(req,res)=>{
     const namaAdmin = req.body.nama_admin;
     const idCabangPenerima = req.body.id_cabang_penerima;
     const namaCabangPenerima = req.body.nama_cabang_penerima;
-    const resi_barang = req.body.resi_barang;
+    const resibarang = req.body.resi_barang;
     const idEkspedisi = req.body.id_ekspedisi;
     const sentran = await Sentran.update({
         id_barang: idBarang,
@@ -58,7 +58,7 @@ router.put('/:id', async(req,res)=>{
         nama_admin:namaAdmin,
         id_cabang_penerima: idCabangPenerima,
         nama_cabang_penerima:namaCabangPenerima,
-        resi_barang:resi_barang,
+        resi_barang:resibarang,
         id_ekspedisi:idEkspedisi
     },
     {
