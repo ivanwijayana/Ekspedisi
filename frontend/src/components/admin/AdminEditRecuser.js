@@ -111,7 +111,7 @@ function AdminEditRecuser(){
                             </div>
                                         
                             <div className="card-footer">
-                                <button type="submit" className="btn btn-primary btn-sm">
+                                <button onClick={() => {window.location.href="/recuser"}} type="submit" className="btn btn-primary btn-sm">
                                     <i className="fa fa-dot-circle-o"></i> Submit
                                 </button>
                             </div>

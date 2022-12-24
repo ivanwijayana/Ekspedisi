@@ -46,7 +46,7 @@ function SAFormCabang(){
                             </div>
                         </div>
                         <div className="but">
-                            <button type="submit" className="btn btn-primary" style={{margin:'10px 10px'}}>Simpan</button>
+                            <button onClick={() => {window.location.href="/cabang"}} type="submit" className="btn btn-primary" style={{margin:'10px 10px'}}>Simpan</button>
                         </div>
                     </div>
                     </form>
