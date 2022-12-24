@@ -28,7 +28,6 @@ router.post('/', async(req,res)=>{
     res.json(user)
 });
 
-
 router.put('/:id', async(req,res)=>{
     const idTableUser = req.params.id;
     const idUser = req.body.user_id;
