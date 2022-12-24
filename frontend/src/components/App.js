@@ -10,14 +10,17 @@ import LoginUser from "./LoginUser";
 import SAFormCabang from "./superadmin/SAFormCabang";
 import SAFormKaryawan from "./superadmin/SAFormKaryawan";
 import SAFormAdmin from "./superadmin/SAFormAdmin";
+import SAFormUser from "./superadmin/SAFormUser";
   //Edit
 import SAEditCabang from "./superadmin/SAEditCabang";
 import SAEditKaryawan from "./superadmin/SAEditKaryawan";
 import SAEditAdmin from "./superadmin/SAEditAdmin";
+import SAEditUser from "./superadmin/SAEditUser";
   //Main Page
 import SAAdmin from "./SAAdmin";
 import SAKaryawan from "./SAKaryawan";
 import SACabang from "./SACabang";
+import SAUser from "./SAUser";
 
 //Admin
   //Form
@@ -50,6 +53,11 @@ function App() {
         <Route path='/cabang/delete/:id' element={<SACabang />} />
         <Route path='/cabang/edit/:id' element={<SAEditCabang />} />
         <Route path='/cabang/form' element={<SAFormCabang />} />
+
+        <Route path='/user' element={<SAUser />} />
+        <Route path='/user/delete/:id' element={<SAUser />} />
+        <Route path='/user/edit/:id' element={<SAEditUser />} />
+        <Route path='/user/form' element={<SAFormUser />} />
 
         <Route path='/karyawan' element={<SAKaryawan/>} />
         <Route path='/karyawan/delete/:id' element={<SAKaryawan />} />
