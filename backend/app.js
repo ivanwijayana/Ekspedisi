@@ -13,7 +13,10 @@ const cabangModel = require('./models/cabangModel');
 const recuserModel = require('./models/recuserModel');
 const recexpModel = require('./models/recexpModel');
 const karyawanModel = require('./models/karyawanModel');
-const userModel = require('./models/userModel');
+const sentranModel = require('./models/sentranModel');
+const senrecModel = require('./models/senrecModel');
+const adminModel = require('./models/adminModel');
+const userModel = requireq('./models/userModel');
 
 try{
     db.authenticate();
@@ -21,15 +24,11 @@ try{
     cabangModel.sync();
     recexpModel.sync();
     recuserModel.sync();
-    recexpModel.sync();
-    recuserModel.sync();
     karyawanModel.sync();
     sentranModel.sync();
     senrecModel.sync();
     adminModel.sync();
-} catch (error){
     userModel.sync();
-
 } catch (error){
     console.log(error);
 }
@@ -43,11 +42,11 @@ app.use(express.json());
 app.use('/cabang', require('./routes/cabang'));
 app.use('/recuser', require('./routes/recuser'));
 app.use('/recexp', require('./routes/recexp'));
-app.use('/recuser', require('./routes/recuser'));
-app.use('/recexp', require('./routes/recexp'));
 app.use('/karyawan', require('./routes/karyawan'));
+app.use('/sentran', require('./routes/sentran'));
+app.use('/senrec', require('./routes/senrec'));
+app.use('/admin', require('./routes/admin'));
 app.use('/user', require('./routes/user'));
-//samakansesuaifile
 
 app.use(express.urlencoded({extended:true}))
 app.use(session({
