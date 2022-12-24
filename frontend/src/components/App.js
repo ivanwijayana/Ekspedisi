@@ -1,5 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
+import Home from "./Home";
 import Login from "./Login";
 import LoginUser from "./LoginUser";
 
@@ -38,7 +40,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<Login />} />
+        <Route path='/' element={<Home />} />
         <Route path='/login' element={<Login />} />
         <Route path='/login-user' element={<LoginUser />} />
         <Route path='/login-superadmin' element={<SACabang />} />
