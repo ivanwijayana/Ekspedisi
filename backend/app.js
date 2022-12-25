@@ -16,7 +16,7 @@ const karyawanModel = require('./models/karyawanModel');
 const sentranModel = require('./models/sentranModel');
 const senrecModel = require('./models/senrecModel');
 const adminModel = require('./models/adminModel');
-const userModel = requireq('./models/userModel');
+const userModel = require('./models/userModel');
 
 try{
     db.authenticate();

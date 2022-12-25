@@ -21,6 +21,7 @@ import SAAdmin from "./SAAdmin";
 import SAKaryawan from "./SAKaryawan";
 import SACabang from "./SACabang";
 import SAUser from "./SAUser";
+import SADashboard from "./superadmin/SADashboard";
 
 //Admin
   //Form
@@ -38,6 +39,7 @@ import AdminSenrec from "./AdminSenrec";
 import AdminRecexp from "./AdminRecexp";
 import AdminRecuser from "./AdminRecuser";
 import AdminSentran from "./AdminSentran";
+import AdminDashboard from "./admin/AdminDashboard";
 
 function App() {
   return (
@@ -46,8 +48,10 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/login' element={<Login />} />
         <Route path='/login-user' element={<LoginUser />} />
-        <Route path='/login-superadmin' element={<SACabang />} />
-        <Route path='/login-admin' element={<AdminRecexp />} />
+        <Route path='/login-superadmin' element={<SADashboard />} />
+        <Route path='/sa-dashboard' element={<SADashboard />} />
+        <Route path='/login-admin' element={<AdminDashboard />} />
+        <Route path='/admin-dashboard' element={<AdminDashboard />} />
 
         <Route path='/cabang' element={<SACabang />} />
         <Route path='/cabang/delete/:id' element={<SACabang />} />

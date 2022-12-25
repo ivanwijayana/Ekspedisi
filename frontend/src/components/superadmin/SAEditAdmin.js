@@ -56,7 +56,7 @@ function SAEditAdmin() {
                             </div>
                         </div>
                         <div class="but">
-                            <button type="submit" class="btn btn-primary">Simpan</button>
+                            <button onClick={() => {window.location.href="/admin"}} type="submit" class="btn btn-primary">Simpan</button>
                         </div>
                     </div>
                 </form>

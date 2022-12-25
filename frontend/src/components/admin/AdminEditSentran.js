@@ -130,7 +130,7 @@ function AdminEditSentran() {
                                 </div>
                             </div>
                             <div class="card-footer">
-                                <button type="submit" class="btn btn-primary btn-sm">
+                                <button onClick={() => {window.location.href="/sentran"}} type="submit" class="btn btn-primary btn-sm">
                                     <i class="fa fa-dot-circle-o"></i> Submit
                                 </button>
                             </div>

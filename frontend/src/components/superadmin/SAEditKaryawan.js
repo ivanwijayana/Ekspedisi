@@ -60,7 +60,7 @@ function SAEditKaryawan(){
                             </div>
                         </div>
                         <div className="but">
-                            <button type="submit" className="btn btn-primary">Simpan</button>
+                            <button onClick={() => {window.location.href="/karyawan"}} type="submit" className="btn btn-primary">Simpan</button>
                         </div>
                     </div>
                     </form>
