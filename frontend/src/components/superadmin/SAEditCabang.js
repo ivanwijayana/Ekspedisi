@@ -63,8 +63,17 @@ function SAEditCabang(){
                             <button onClick={() => {window.location.href="/cabang"}} type="submit" className="btn btn-primary">Simpan</button>
                         </div>
                     </div>
+<<<<<<< HEAD
                     </form>
             </div>
+=======
+                    <div className="but">
+                        <button onClick={() => {window.location.href="/cabang"}} type="submit" className="btn btn-primary">Simpan</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+>>>>>>> 3c6f8d7e7e8edd209141df9a3026932c769eade2
     )
 }
 

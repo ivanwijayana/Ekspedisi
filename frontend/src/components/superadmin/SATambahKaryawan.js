@@ -3,7 +3,7 @@ import axios from "axios";
 
 function SATambahKaryawan(){
     const [karyawan, setKaryawan] = useState([]);    
- 
+
     useEffect(() => {
         axios.get('http://localhost:3010/karyawan')
             .then(res => {

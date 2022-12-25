@@ -7,7 +7,7 @@ function SAFormKaryawan(){
     const [lokasi, setLokasi] = useState('');
     const [id, setId] = useState('');
     const navigate = useNavigate();
- 
+
     const saveKaryawan = async (e) => {
         e.preventDefault();
         await axios.post('http://localhost:3010/karyawan', {

@@ -28,7 +28,6 @@ router.post('/', async(req,res)=>{
     res.json(user)
 });
 
-
 router.put('/:id', async(req,res)=>{
     const idTableUser = req.params.id;
     const idUser = req.body.user_id;
@@ -36,7 +35,7 @@ router.put('/:id', async(req,res)=>{
     const password = req.body.password;
     const user = await User.update({
         user_id: idUser,
-        username:namaUser,
+        password:namaUser,
         password:password
     },
     {

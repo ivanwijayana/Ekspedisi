@@ -1,4 +1,3 @@
-
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -115,9 +114,6 @@ function AdminEditRecuser(){
                                 <button onClick={() => {window.location.href="/recuser"}} type="submit" className="btn btn-primary btn-sm">
                                     <i className="fa fa-dot-circle-o"></i> Submit
                                 </button>
-                                <button onClick={() => {window.location.href="/recuser/form"}} type="reset" className="btn btn-danger btn-sm">
-                                    <i className="fa fa-ban"></i> Reset
-                                </button>
                             </div>
                         </form>
                     </div>
@@ -129,3 +125,4 @@ function AdminEditRecuser(){
 }
 
 export default AdminEditRecuser;
+

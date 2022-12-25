@@ -3,7 +3,7 @@ import SideSuper from "./sidebar/SideSuper";
 import SuperHeader from "./header/SuperHeader";
 import SATambahUser from "./superadmin/SATambahUser";
 
-function SAKaryawan(){
+function SAUser(){
     const containerStyles = {
     display: 'flex',
     flexDirection: 'row',
@@ -25,4 +25,4 @@ function SAKaryawan(){
 
 
 
-export default SAKaryawan;
+export default SAUser;
