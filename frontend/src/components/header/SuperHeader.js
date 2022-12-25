@@ -6,8 +6,7 @@ function SuperHeader(){
         <header id="header" className="header">
             <div className="top-left">
                 <div className="navbar-header">
-                    <a className="navbar-brand" href="">GO Express</a>
-
+                    <a className="navbar-brand" href="/">GO Express</a>
                     <a id="menuToggle" className="menutoggle"><i className="fa fa-bars"></i></a>
                 </div>
             </div>

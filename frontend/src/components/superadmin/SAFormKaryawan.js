@@ -40,13 +40,13 @@ function SAFormKaryawan(){
                             <input type="text" id="nama_cabang" name="nama_cabang" placeholder="Enter Karyawan Name" className="form-control" onChange={(e) => setNama(e.target.value)} value={nama}/>
                             
                             <label for="street" className=" form-control-label">
-                                Lokasi Cabang
+                                Lokasi Karyawan
                             </label>
                             <input type="text" id="lokasi" name="lokasi" placeholder="Enter Cabang Karyawan" className="form-control" onChange={(e) => setLokasi(e.target.value)} value={lokasi}/>
                             </div>
                         </div>
                         <div className="but">
-                            <button onClick={() => {window.location.href="/cabang"}} type="submit" className="btn btn-primary" style={{margin:'10px 10px'}}>Simpan</button>
+                            <button onClick={() => {window.location.href="/karyawan"}} type="submit" className="btn btn-primary" style={{margin:'10px 10px'}}>Simpan</button>
                         </div>
                     </div>
                     </form>

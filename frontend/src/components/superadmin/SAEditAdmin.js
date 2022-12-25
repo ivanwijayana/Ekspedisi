@@ -2,8 +2,9 @@ import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
+
 function SAEditAdmin(){
-    const [email, setEmail] = useState('');
+    const [nama, setNama] = useState('');
     const [password, setPassword] = useState('');
     const [idadmin, setIdAdmin] = useState('');
     const navigate = useNavigate();
@@ -13,7 +14,7 @@ function SAEditAdmin(){
         try{
             axios.get(`http://localhost:3010/sadmin/${id}`).then((res) => {
             setIdAdmin(res.data.admin_id);
-            setEmail(res.data.admin_email);
+            setNama(res.data.username);
             setPassword(res.data.password);
         });
         } catch (error){
@@ -23,16 +24,17 @@ function SAEditAdmin(){
 
     const data = {
         admin_id: idadmin,
-        admin_email: email,
+        username: nama,
         password: password
     };
     function UpdateAdmin(e) {
         e.preventDefault();
-        try{axios.put(`http://localhost:3010/sadmin/${id}`, data).then(navigate("/admin"));}
+        try{axios.put(`http://localhost:3010/sadmin/${id}`, data).then(navigate("/sadmin"));}
         catch (error){
             alert(error)
         }
     }
+
 
     return(
         <div className="col-lg-6">
@@ -47,9 +49,9 @@ function SAEditAdmin(){
                             <input type="text" id="id_cabang" name="id_cabang" placeholder="Enter User ID" className="form-control" onChange={(e) => setIdAdmin(e.target.value)} value={idadmin}/>                                
                             
                             <label for="vat" className=" form-control-label">
-                                Email Admin
+                                Username
                             </label>
-                            <input type="text" id="nama_cabang" name="nama_cabang" placeholder="Enter New Name" className="form-control" onChange={(e) => setEmail(e.target.value)} value={email}/>
+                            <input type="text" id="nama_cabang" name="nama_cabang" placeholder="Enter New Name" className="form-control" onChange={(e) => setNama(e.target.value)} value={nama}/>
                             
                             <label for="street" className=" form-control-label">
                                 Password
@@ -58,8 +60,9 @@ function SAEditAdmin(){
                             </div>
                         </div>
                         <div className="but">
-                            <button type="submit" className="btn btn-primary">Simpan</button>
+                            <button onClick={() => {window.location.href="/sadmin"}} type="submit" className="btn btn-primary">Simpan</button>
                         </div>
+                        
                     </div>
                 </form>
             </div>

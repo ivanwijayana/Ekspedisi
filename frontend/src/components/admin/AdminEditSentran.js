@@ -143,4 +143,3 @@ function AdminEditSentran() {
 }
 
 export default AdminEditSentran;
-

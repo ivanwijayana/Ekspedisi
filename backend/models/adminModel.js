@@ -3,12 +3,17 @@ const db = require('../config/database');
 const { DataTypes } = Sequelize;
  
 const Product = db.define('table_admin',{
-    admin_id:{
+    id_table_admin:{
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true
     },
-    admin_email:{
+    admin_id:{
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        validate: true
+    },
+    username:{
         type: DataTypes.STRING,
         allowNull: false,
         validate: true

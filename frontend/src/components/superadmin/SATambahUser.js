@@ -56,7 +56,7 @@ function SATambahUser(){
                                                         <a href={`/user/edit/${user.id_table_user}`}>
                                                         <span onClick={() => {window.location.href="/user"}} className="badge badge-complete">Edit</span>
                                                         </a>
-                                                        < a onClick={() => deleteUser(user.id_table_user)}>
+                                                        <a onClick={() => deleteUser(user.id_table_user)}>
                                                             <span onClick={() => {window.location.href="/user"}} className="badge badge-danger">Delete</span>
                                                         </a>
                                                         </td>

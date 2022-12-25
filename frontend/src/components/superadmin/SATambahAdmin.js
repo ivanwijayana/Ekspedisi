@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 function SATambahAdmin(){
-    const [admin, setAdmin] = useState([]);
+    const [sadmin, setAdmin] = useState([]);
 
     useEffect(() => {
         axios.get('http://localhost:3010/sadmin')
@@ -13,9 +13,9 @@ function SATambahAdmin(){
             })
     }, []);
 
-    const deleteAdmin = async (admin_id) => {
+    const deleteAdmin = async (id_table_admin) => {
         try{
-            await axios.delete(`http://localhost:3010/sadmin/delete/${admin_id}`)
+            await axios.delete(`http://localhost:3010/sadmin/delete/${id_table_admin}`)
         } catch (error){
             alert(error)
         }
@@ -24,7 +24,7 @@ function SATambahAdmin(){
     return(
         <div className="orders">
             <a href="/sadmin/form">
-                    <button type="button" class="btn btn-primary fa fa-plus" > Tambah</button>
+            <button type="button" class="btn btn-primary fa fa-plus" > Tambah</button>
                 </a>
                     <div className="row" style={{marginTop:'8px'}}>
                         <div className="col-xl-7">
@@ -39,26 +39,25 @@ function SATambahAdmin(){
                                                 <tr>
                                                     <th className="serial">No</th>
                                                     <th>ID Admin</th>
-                                                    <th>Email Admin</th>
+                                                    <th>Username</th>
                                                     <th>Password</th> 
                                                     <th className="th-o">Option</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                    {admin.map((admin, index) => (
-                                                        <tr key={admin.admin_id}>
+                                                    {sadmin.map((sadmin, index) => (
+                                                        <tr key={sadmin.admin_id}>
                                                         <td className="serial"><span className="id-column">{index + 1}</span></td>
-                                                        <td> <span className="name-column">{admin.admin_id}</span></td>
-                                                        <td> <span className="name-column">{admin.admin_email}</span> </td>
-                                                        <td> <span className="name-column">{admin.password}</span> </td>
+                                                        <td> <span className="name-column">{sadmin.admin_id}</span></td>
+                                                        <td> <span className="name-column">{sadmin.username}</span> </td>
+                                                        <td> <span className="name-column">{sadmin.password}</span> </td>
                                                        
                                                         <td>
-                                                        <a href={`/sadmin/edit/${admin.admin_id}`}>
-                                                        <span className="badge badge-complete">Edit</span>
+                                                        <a href={`/sadmin/edit/${sadmin.id_table_admin}`}>
+                                                        <span onClick={() => {window.location.href="/sadmin"}} className="badge badge-complete">Edit</span>
                                                         </a>
-                                                        <a href={`/sadmin/delete/${admin.admin_id}`} 
-                                                        onClick={() => deleteAdmin(admin.admin_id)}>
-                                                            <span className="badge badge-danger">Delete</span>
+                                                        <a onClick={() => deleteAdmin(sadmin.id_table_admin)}>
+                                                            <span onClick={() => {window.location.href="/sadmin"}} className="badge badge-danger">Delete</span>
                                                         </a>
                                                         </td>
                                                         </tr>

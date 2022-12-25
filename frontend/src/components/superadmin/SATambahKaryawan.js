@@ -53,10 +53,10 @@ function SATambahKaryawan(){
                                                         <td> <span className="name-column">{karyawan.cabang_karyawan}</span> </td>
                                                         <td>
                                                         <a href={`/karyawan/edit/${karyawan.id_table_karyawan}`}>
-                                                        <span onClick={() => {window.location.href="/cabang"}} className="badge badge-complete">Edit</span>
+                                                        <span onClick={() => {window.location.href="/karyawan"}} className="badge badge-complete">Edit</span>
                                                         </a>
-                                                        <a href={`/karyawan`}>
-                                                            <span onClick={() => {window.location.href="/cabang"}} className="badge badge-danger">Delete</span>
+                                                        <a onClick={() => deleteKaryawan(karyawan.id_table_karyawan)}>
+                                                            <span onClick={() => {window.location.href="/karyawan"}} className="badge badge-danger">Delete</span>
                                                         </a>
                                                         </td>
                                                         </tr>

@@ -14,6 +14,7 @@ const recuserModel = require('./models/recuserModel');
 const recexpModel = require('./models/recexpModel');
 const karyawanModel = require('./models/karyawanModel');
 const userModel = require('./models/userModel');
+const adminModel = require('./models/adminModel');
 
 try{
     db.authenticate();
@@ -27,8 +28,8 @@ try{
     sentranModel.sync();
     senrecModel.sync();
     adminModel.sync();
-} catch (error){
     userModel.sync();
+
 
 } catch (error){
     console.log(error);
@@ -47,7 +48,8 @@ app.use('/recuser', require('./routes/recuser'));
 app.use('/recexp', require('./routes/recexp'));
 app.use('/karyawan', require('./routes/karyawan'));
 app.use('/user', require('./routes/user'));
-//samakansesuaifile
+app.use('/sadmin', require('./routes/sadmin'));
+app.use('/sentran', require('./routes/sentran'));
 
 app.use(express.urlencoded({extended:true}))
 app.use(session({

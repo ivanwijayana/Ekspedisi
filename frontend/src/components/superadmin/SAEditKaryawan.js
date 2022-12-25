@@ -27,7 +27,7 @@ function SAEditKaryawan(){
         cabang_karyawan: lokasi
     };
 
-    function UpdateCabang(e) {
+    function UpdateKaryawan(e) {
         e.preventDefault();
         try{axios.put(`http://localhost:3010/karyawan/${id}`, data).then(navigate("/karyawan"));}
         catch (error){
@@ -37,9 +37,9 @@ function SAEditKaryawan(){
 
     return(
         <div className="col-lg-6">
-                    <form className="form-horizontal" onSubmit={UpdateCabang}>
+                    <form className="form-horizontal" onSubmit={UpdateKaryawan}>
                     <div className="card">
-                        <div className="card-header"><strong>Form Cabang</strong></div>
+                        <div className="card-header"><strong>Form Karyawan</strong></div>
                         <div className="card-body card-block">
                             <div className="form-group">
                                 <label for="company" className=" form-control-label">
@@ -53,13 +53,13 @@ function SAEditKaryawan(){
                             <input type="text" id="nama_cabang" name="nama_cabang" placeholder="Enter Cabang Name" className="form-control" onChange={(e) => setNama(e.target.value)} value={nama}/>
                             
                             <label for="street" className=" form-control-label">
-                                Lokasi Cabang
+                                Lokasi Karyawan
                             </label>
                             <input type="text" id="lokasi" name="lokasi" placeholder="Enter Cabang Location" className="form-control" onChange={(e) => setLokasi(e.target.value)} value={lokasi}/>
                             </div>
                         </div>
                         <div className="but">
-                            <button onClick={() => {window.location.href="/cabang"}} type="submit" className="btn btn-primary">Simpan</button>
+                            <button onClick={() => {window.location.href="/karyawan"}} type="submit" className="btn btn-primary">Simpan</button>
                         </div>
                     </div>
                 </form>
