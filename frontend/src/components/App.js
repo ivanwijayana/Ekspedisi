@@ -3,7 +3,12 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import Home from "./Home";
 import Login from "./Login";
-import LoginUser from "./LoginUser";
+
+//Admin
+  //Check
+import User from "./User";
+  //Lapor
+import UserLapor from "./user/UserLapor";
 
 //Super Admin
   //Form
@@ -47,11 +52,14 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/login' element={<Login />} />
-        <Route path='/login-user' element={<LoginUser />} />
+        <Route path='/login-user' element={<User />} />
         <Route path='/login-superadmin' element={<SADashboard />} />
         <Route path='/sa-dashboard' element={<SADashboard />} />
         <Route path='/login-admin' element={<AdminDashboard />} />
         <Route path='/admin-dashboard' element={<AdminDashboard />} />
+
+        <Route path='/check' element={<User />} />
+        <Route path='/lapor' element={<UserLapor />} />
 
         <Route path='/cabang' element={<SACabang />} />
         <Route path='/cabang/delete/:id' element={<SACabang />} />
