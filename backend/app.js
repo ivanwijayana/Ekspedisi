@@ -17,6 +17,7 @@ const sentranModel = require('./models/sentranModel');
 const senrecModel = require('./models/senrecModel');
 const adminModel = require('./models/adminModel');
 const userModel = require('./models/userModel');
+const reportModel = require('./models/reportModel');
 
 try{
     db.authenticate();
@@ -29,6 +30,7 @@ try{
     senrecModel.sync();
     adminModel.sync();
     userModel.sync();
+    reportModel.sync();
 } catch (error){
     console.log(error);
 }
@@ -47,6 +49,7 @@ app.use('/sentran', require('./routes/sentran'));
 app.use('/senrec', require('./routes/senrec'));
 app.use('/admin', require('./routes/admin'));
 app.use('/user', require('./routes/user'));
+app.use('/report', require('./routes/report'));
 
 app.use(express.urlencoded({extended:true}))
 app.use(session({
